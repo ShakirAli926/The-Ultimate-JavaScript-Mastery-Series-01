@@ -96,4 +96,80 @@ console.log(fizzBuzz("37"));
 
 /*
     Exercise 4- Demerit Points
+    - Speed Limit = 70
+    - Extra 5 -> 1 Point increase panelty
+    - Math.floor(1.3) > 1
+    - 12 Points >   License Suspended
+
 */
+
+function checkSpeed(speed) {
+  const speedLimit = 70;
+  const kmPeroint = 5;
+
+  // if (speed < speedLimit + kmPeroint) {
+  //   return "OK";
+  // } else {
+  //   const panelty = Math.floor((speed - speedLimit) / kmPeroint);
+  //   if (panelty >= 12) {
+  //     return "License Suspended";
+  //   } else {
+  //     return `Point : ${panelty}`;
+  //   }
+  // }
+
+  if (speed < speedLimit + kmPeroint) {
+    return "OK";
+  }
+  const panelty = Math.floor((speed - speedLimit) / kmPeroint);
+  if (panelty >= 12) {
+    return "License Suspended";
+  } else {
+    return `Point : ${panelty}`;
+  }
+}
+
+console.log(checkSpeed(130));
+// --------------------------------------------------
+
+/*
+    Exercise 5- Even and Odd Numbers   
+*/
+
+function showNumber(number) {
+  for (var i = 0; i <= number; i++) {
+    // i % 2 == 0 ? console.log(i, '"EVEN"') : console.log(i, '"ODD"');
+
+    const message = i % 2 ? "EVEN" : "ODD";
+
+    console.log(i, message);
+  }
+}
+
+showNumber(10);
+// --------------------------------------------------
+
+/*
+    Exercise 6- Count Truthy   
+
+    * Falsy 
+      - undefined
+      - null
+      - ''
+      - false
+      - 0
+      - NaN
+*/
+
+const array = [undefined, 0, 1, "joker"];
+
+function countTruthy(array) {
+  let count = 0;
+  for (let value of array) {
+    if (value) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countTruthy(array));
